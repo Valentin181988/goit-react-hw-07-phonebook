@@ -1,11 +1,11 @@
 import { 
     useFetchContactsQuery, 
     useDeleteContactMutation 
-} from "../redux/contactSlice";
+} from "../../redux/contactSlice";
 import { ContactList } from "./contactList";
-import { Spinner } from "./spinner";
+import { Spinner } from "../spinner";
 
-export const Contact = () => {
+export const Contacts = () => {
 
     const { data: contacts, isFetcing, error } = useFetchContactsQuery();
     const [ deleteContact, {isLoading: isDeleting} ] = useDeleteContactMutation();
