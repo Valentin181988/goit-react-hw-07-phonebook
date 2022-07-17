@@ -1,11 +1,13 @@
 import { useState } from "react";
+import toast from 'react-hot-toast';
 import PropTypes from 'prop-types';
-import { useCreateContactMutation } from "../../redux/contactSlice";
+import { useCreateContactMutation, useFetchContactsQuery } from "../../redux/contactSlice";
 import { Spinner } from "../Spinner/spinner";
 import { Form, Label, Input, SubmitButton } from "./PhoneBookForm.styled";
 
 export const PhoneBookForm = () => {
     const [createContact, {isLoading}] = useCreateContactMutation();
+    const { data: contacts } = useFetchContactsQuery();
 
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
@@ -27,8 +29,24 @@ export const PhoneBookForm = () => {
     };
   };
 
+  const alreadyInList = () => {
+    return contacts.map(contact => contact.name.toLowerCase().includes(name.toLocaleLowerCase()));
+  };
+
     const handleSubmit = e => {
         e.preventDefault();
+
+        const searchContact = alreadyInList();
+
+        console.log(searchContact);
+
+        if (searchContact.includes(true)) {
+          toast.error("A contact with the same name already exists!");
+
+          setName('');
+          setNumber('');
+          return;
+        };
 
         const contact = {
           name,
