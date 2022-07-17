@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from 'prop-types';
 import { useCreateContactMutation } from "../../redux/contactSlice";
-import { Spinner } from "../spinner";
+import { Spinner } from "../Spinner/spinner";
 import { Form, Label, Input, SubmitButton } from "./PhoneBookForm.styled";
 
 export const PhoneBookForm = () => {

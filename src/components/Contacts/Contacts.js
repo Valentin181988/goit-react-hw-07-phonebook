@@ -3,7 +3,7 @@ import {
     useDeleteContactMutation 
 } from "../../redux/contactSlice";
 import { ContactList } from "./contactList";
-import { Spinner } from "../spinner";
+import { Spinner } from "../Spinner/spinner";
 
 export const Contacts = () => {
 
