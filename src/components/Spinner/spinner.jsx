@@ -1,7 +1,7 @@
-import { BallTriangle } from  'react-loader-spinner';
+import { Watch } from  'react-loader-spinner';
 
 export const Spinner = () => {
     
-    return <BallTriangle color="#00BFFF" height={60} width={60} />;
+    return <Watch color="#00BFFF" height={24} width={24} />;
 }
 

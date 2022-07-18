@@ -1,6 +1,5 @@
 import { useState } from "react";
 import toast from 'react-hot-toast';
-import PropTypes from 'prop-types';
 import { useCreateContactMutation, useFetchContactsQuery } from "../../redux/contactSlice";
 import { Spinner } from "../Spinner/spinner";
 import { Form, Label, Input, SubmitButton } from "./PhoneBookForm.styled";
@@ -81,14 +80,10 @@ export const PhoneBookForm = () => {
                 onChange={handleChange}/>
 
             <SubmitButton type="submit" disabled={isLoading}>
-                {isLoading && <Spinner size={10} />}
-                Add contact
+                {isLoading ? <Spinner size={10} /> : "Add contact"}    
             </SubmitButton>
           </Form> 
         </>
     );
 };
 
-PhoneBookForm.propTypes = {
-  onSubmit: PropTypes.func
-};
