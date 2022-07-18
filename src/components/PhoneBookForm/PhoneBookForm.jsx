@@ -38,8 +38,6 @@ export const PhoneBookForm = () => {
 
         const searchContact = alreadyInList();
 
-        console.log(searchContact);
-
         if (searchContact.includes(true)) {
           toast.error("A contact with the same name already exists!");
 

@@ -1,4 +1,5 @@
 import './App.css';
+
 import { Toaster } from 'react-hot-toast';
 import { PhoneBookTitle } from './components/ContactsTitle/PhoneBookTitle';
 import { ContactsTitle } from './components/ContactsTitle/ContactsTitle';
@@ -7,7 +8,8 @@ import { PhoneBookForm } from './components/PhoneBookForm/PhoneBookForm';
 import { Filter } from './components/Filter/Filter';
 
 
-function App() {
+function App() { 
+
   return (
     <>
       <PhoneBookTitle title="Phone book"/>
